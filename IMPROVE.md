@@ -1,62 +1,60 @@
-Self-Hosted Stack Next Steps
+# Self-Hosted Stack Next Steps
 
-Tailscale
+## Now
 
-* Secure remote access to both servers
-* No port forwarding needed
-* Access Immich/Home Assistant privately from anywhere
-* Makes VPS ↔ home server networking simple
+### Vaultwarden
 
-Vaultwarden
+- Central place for passwords/API keys/TOTP
+- Prevents secret sprawl across notes/env files
+- Easy credential sharing across services/devices
 
-* Central place for passwords/API keys/TOTP
-* Prevents secret sprawl across notes/env files
-* Easy credential sharing across services/devices
+### Authentik
 
-Authentik
+- One login for all self-hosted apps
+- Centralized MFA/security policies
+- Cleaner authentication management long-term
 
-* One login for all self-hosted apps
-* Centralized MFA/security policies
-* Cleaner authentication management long-term
+### Infrastructure as Code
 
-n8n
+- Rebuild servers quickly if destroyed
+- Keeps deployments reproducible
+- Prevents “snowflake server” problems
 
-* Connects automations across services
-* Easier than maintaining scattered scripts/cron jobs
-* Useful for email → automation → notifications workflows
+### Grafana + Loki
 
-Open WebUI + Local LLM
+- Visibility into server/container health
+- Searchable logs when debugging failures
+- Helps diagnose performance/network issues quickly
 
-* Chat with your notes/configs/docs privately
-* AI assistant over your infrastructure
-* Useful for troubleshooting and knowledge retrieval
+## Later
 
-Infrastructure as Code
+### Restic + Backblaze B2
 
-* Rebuild servers quickly if destroyed
-* Keeps deployments reproducible
-* Prevents “snowflake server” problems
+- Offsite encrypted backups
+- Protects Immich photos + Home Assistant configs
+- Recovery if home server dies/ransomware/disk failure
 
-Uptime Kuma
+### ZFS / Proxmox
 
-* Alerts when services go down
-* Monitors SSL/domain expiration
-* Lets you know problems before users do
+- Snapshots and rollback safety
+- Better storage integrity/reliability
+- Easier server recovery and experimentation
 
-Grafana + Loki
+### Uptime Kuma
 
-* Visibility into server/container health
-* Searchable logs when debugging failures
-* Helps diagnose performance/network issues quickly
+- Alerts when services go down
+- Monitors SSL/domain expiration
+- Lets you know problems before users do
 
-ZFS / Proxmox
+### Open WebUI + Local LLM
 
-* Snapshots and rollback safety
-* Better storage integrity/reliability
-* Easier server recovery and experimentation
+- Chat with your notes/configs/docs privately
+- AI assistant over your infrastructure
+- Useful for troubleshooting and knowledge retrieval
 
-Restic + Backblaze B2
+### n8n
 
-* Offsite encrypted backups
-* Protects Immich photos + Home Assistant configs
-* Recovery if home server dies/ransomware/disk failure
+- Connects automations across services
+- Easier than maintaining scattered scripts/cron jobs
+- Useful for email → automation → notifications workflows
+
